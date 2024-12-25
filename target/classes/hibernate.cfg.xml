@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/myhiber?allowPublicKeyRetrieval=true</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">welcome</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property> <!-- Use MySQL8Dialect for MySQL 8 -->
+		<property name="hibernate.hbm2ddl.auto">update</property> <!-- to create table use create and to update existing tables pristine use update instead !--> 
+		<property name="hibernate.show_sql">true</property> <!-- to show the sql made by hibernate !--> 
+		<property name="hibernate.format_sql">true</property>
+		
+		<!-- Persisters !--> 
+		<mapping class="com.tute.HibernateSessiontute.Student"/> <!-- to acknowldege the hibernate that this is a table !--> 
+		<mapping class="com.tute.HibernateSessiontute.Address"/>
+		<mapping class="com.tute.Mapping.Question"/>
+		<mapping class="com.tute.Mapping.Answer"/>
+		<mapping class="com.tute.Mapping.OneToMany.Vehicle"/>
+		<mapping class="com.tute.Mapping.OneToMany.TataMotors"/>
+		<mapping class="com.tute.Mapping.ManyToMany.Employee"/>
+		<mapping class="com.tute.Mapping.ManyToMany.Project"/>
+		<mapping class="com.tute.SessionStates.Worker"/>
+		<mapping class="com.tute.hql.Feeders.Department"/>
+		<mapping class="com.tute.hql.Feeders.Faculty"/>
+		<mapping class="com.tute.hql.Feeders.Trainee"/>
+	</session-factory>
+</hibernate-configuration>
